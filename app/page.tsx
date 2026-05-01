@@ -5,52 +5,41 @@ import {
   ArrowUpRight,
   Building2,
   Clock3,
-  Gift,
-  HeartPulse,
   Mail,
   Menu,
   MessageCircleMore,
   Phone,
-  Pill,
   MapPin,
   ShieldCheck,
   Sparkles,
   Stethoscope,
-  WalletCards,
 } from "lucide-react";
 
 import { BookingModal } from "@/components/booking-modal";
 import { MarketSwitcher } from "@/components/market-switcher";
-import { PricingSection } from "@/components/pricing-section";
 import { Reveal } from "@/components/reveal";
 import { Button, buttonVariants } from "@/components/ui/button";
 
 const WHATSAPP_URL = "https://wa.me/9779808837548";
 
-const visitItems = [
+const trustStats = [
   {
-    title: "Medical Check",
-    description: "BP, sugar, heart rate, and a clean, documented baseline after every visit.",
-    icon: HeartPulse,
+    value: "Growing",
+    label: "Families Interested",
   },
   {
-    title: "Medication Management",
-    description: "Sorting the weekly pillbox and helping families reduce missed doses.",
-    icon: Pill,
+    value: "Ready",
+    label: "Nurses Prepared",
   },
   {
-    title: "The Sanjivani Gift",
-    description: "A small token like flowers or tea to make the visit feel warm, not clinical.",
-    icon: Gift,
+    value: "100%",
+    label: "Direct WhatsApp Updates",
   },
   {
-    title: "Instant Report",
-    description: "A polished PDF summary delivered to the child’s phone immediately after the visit.",
-    icon: MessageCircleMore,
+    value: "0",
+    label: "Hidden Fees",
   },
 ];
-
-const trustLogos = ["Visa", "Mastercard", "eSewa", "Khalti", "Swift Transfer"];
 
 const corporateBenefits = [
   "Add premium parent-care support to executive and diaspora-focused employee benefits.",
@@ -89,7 +78,7 @@ export default function Home() {
             <Link className="transition hover:text-foreground" href="/services">
               Services
             </Link>
-            <Link className="transition hover:text-foreground" href="#pricing">
+            <Link className="transition hover:text-foreground" href="/pricing">
               Pricing
             </Link>
             <Link className="transition hover:text-foreground" href="/about">
@@ -107,7 +96,7 @@ export default function Home() {
               <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <MessageCircleMore className="h-4 w-4" />
               </span>
-              WhatsApp 9808837548
+              Chat on WhatsApp
             </a>
           </div>
 
@@ -218,6 +207,23 @@ export default function Home() {
           </Reveal>
         </section>
 
+        <Reveal className="pb-4">
+          <section className="rounded-[2.5rem] border border-white/75 bg-white/82 px-6 py-10 shadow-[0_22px_70px_rgba(10,44,33,0.06)] backdrop-blur sm:px-8 lg:px-12">
+            <div className="grid gap-8 text-center sm:grid-cols-2 xl:grid-cols-4">
+              {trustStats.map((stat) => (
+                <div key={stat.label} className="space-y-3">
+                  <p className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                    {stat.value}
+                  </p>
+                  <p className="text-base font-medium text-muted-foreground sm:text-lg">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
         <Reveal>
           <section
             id="how-it-works"
@@ -239,74 +245,7 @@ export default function Home() {
           </section>
         </Reveal>
 
-        <Reveal delay={0.06}>
-          <PricingSection />
-        </Reveal>
-
-        <Reveal>
-          <section className="grid gap-8 rounded-[2.5rem] border border-white/70 bg-white/75 p-6 shadow-[0_22px_70px_rgba(10,44,33,0.06)] backdrop-blur sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">
-                What&apos;s in the visit?
-              </p>
-              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Every visit balances medical clarity with emotional reassurance.
-              </h2>
-              <p className="text-base leading-7 text-muted-foreground">
-                This is where the brand earns trust: skilled nurses, visible outputs, and a warmer
-                touch than standard home-care services.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {visitItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-[1.75rem] border border-white/75 bg-white p-5 shadow-sm"
-                >
-                  <div className="inline-flex rounded-2xl bg-primary/10 p-3 text-primary">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold tracking-tight text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
-
-        <Reveal delay={0.08}>
-          <section className="py-24">
-            <div className="rounded-[2.5rem] border border-primary/10 bg-gradient-to-r from-primary to-[#2FA084] px-6 py-10 text-primary-foreground shadow-[0_24px_80px_rgba(47,160,132,0.28)] sm:px-8">
-              <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-                <div className="max-w-2xl">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-white/75">
-                    Global payment trust bar
-                  </p>
-                  <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                    Built to feel easy for families abroad and familiar for families at home.
-                  </h2>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                  {trustLogos.map((logo) => (
-                    <div
-                      key={logo}
-                      className="flex min-w-[130px] items-center justify-center rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-semibold"
-                    >
-                      <WalletCards className="mr-2 h-4 w-4 text-accent" />
-                      {logo}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        </Reveal>
-
-        <Reveal>
+        <Reveal className="mt-8 sm:mt-10">
           <section
             id="for-corporates"
             className="grid gap-8 rounded-[2.5rem] border border-white/70 bg-white/80 p-6 shadow-[0_22px_70px_rgba(10,44,33,0.06)] backdrop-blur sm:p-8 lg:grid-cols-[0.95fr_1.05fr]"
@@ -360,7 +299,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    href="#pricing"
+                    href="/pricing"
                     className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#1F6F5F] transition hover:bg-[#EEEEEE]"
                   >
                     View Plans
@@ -389,7 +328,7 @@ export default function Home() {
                   <Link href="/services" className="transition hover:text-white">
                     Services
                   </Link>
-                  <Link href="#pricing" className="transition hover:text-white">
+                  <Link href="/pricing" className="transition hover:text-white">
                     Pricing
                   </Link>
                   <Link href="/about" className="transition hover:text-white">
@@ -427,7 +366,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="transition hover:text-white"
                     >
-                      WhatsApp: 9808837548
+                      WhatsApp Contact
                     </a>
                   </div>
                   <div className="flex items-start gap-3">

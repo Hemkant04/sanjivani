@@ -44,7 +44,7 @@ const pricingPlans: PricingPlan[] = [
     description: "A higher-touch care experience with weekly visits, live updates, and family support.",
     bestFor: "NRNs wanting total family support",
     featureRows: [
-      { label: "Monthly Visits", value: "4 Visits", note: "Weekly" },
+      { label: "Monthly Visits", value: "3 Visits", note: "Weekly" },
       { label: "Medical Core", value: "Full Vitals + Medication Sorting" },
       { label: "Digital Value", value: "Monthly PDF Health Report", featured: true },
       { label: "Convenience", value: "1 Monthly Errand (Bank/Grocery)", featured: true },

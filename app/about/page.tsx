@@ -71,7 +71,7 @@ export default function AboutPage() {
             <Link className="transition hover:text-foreground" href="/services">
               Services
             </Link>
-            <Link className="transition hover:text-foreground" href="/#pricing">
+            <Link className="transition hover:text-foreground" href="/pricing">
               Pricing
             </Link>
             <Link className="text-foreground" href="/about">
@@ -89,7 +89,7 @@ export default function AboutPage() {
               <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <MessageCircleMore className="h-4 w-4" />
               </span>
-              WhatsApp 9808837548
+              Chat on WhatsApp
             </a>
           </div>
         </header>
@@ -269,7 +269,7 @@ export default function AboutPage() {
                   <Link href="/services" className="transition hover:text-white">
                     Services
                   </Link>
-                  <Link href="/#pricing" className="transition hover:text-white">
+                  <Link href="/pricing" className="transition hover:text-white">
                     Pricing
                   </Link>
                   <Link href="/about" className="transition hover:text-white">
@@ -302,7 +302,7 @@ export default function AboutPage() {
                   <div className="flex items-start gap-3">
                     <Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                     <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="transition hover:text-white">
-                      WhatsApp: 9808837548
+                      WhatsApp Contact
                     </a>
                   </div>
                   <div className="flex items-start gap-3">

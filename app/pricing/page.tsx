@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Building2, Mail, MapPin, MessageCircleMore, Phone, Sparkles } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, MessageCircleMore, Phone, Sparkles } from "lucide-react";
 
 import { BookingModal } from "@/components/booking-modal";
+import { PricingSection } from "@/components/pricing-section";
 import { Reveal } from "@/components/reveal";
-import { ServicesOverview } from "@/components/services-overview";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 const WHATSAPP_URL = "https://wa.me/9779808837548";
 
-export default function ServicesPage() {
+export default function PricingPage() {
   return (
     <main className="relative overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -37,10 +37,10 @@ export default function ServicesPage() {
             <Link className="transition hover:text-foreground" href="/">
               Home
             </Link>
-            <Link className="text-foreground" href="/services">
+            <Link className="transition hover:text-foreground" href="/services">
               Services
             </Link>
-            <Link className="transition hover:text-foreground" href="/pricing">
+            <Link className="text-foreground" href="/pricing">
               Pricing
             </Link>
             <Link className="transition hover:text-foreground" href="/about">
@@ -75,37 +75,37 @@ export default function ServicesPage() {
               </Link>
               <div className="space-y-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground">
-                  Dedicated Services Page
+                  Dedicated Pricing Page
                 </p>
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-medium text-primary shadow-sm">
                   <Sparkles className="h-4 w-4" />
-                  Bootstrapped in Nepal
+                  Clear monthly plans for every family
                 </div>
                 <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-tight text-foreground sm:text-6xl">
-                  A clearer look at Sanjivani&apos;s care services.
+                  Latest pricing now lives on its own page for quicker browsing.
                 </h1>
                 <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                  Explore the main service lines families can understand immediately, from routine
-                  home healthcare to recovery support and upcoming tele communication.
+                  Compare Sanjivani&apos;s care plans in one focused place, with the same
+                  nurse-led support details families need before booking.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <BookingModal />
                 <Link
-                  href="/pricing"
+                  href="/services"
                   className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-white px-6 text-base font-semibold text-foreground transition hover:border-primary/30 hover:bg-primary/5"
                 >
-                  View Pricing
+                  Explore Services
                 </Link>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Professional nurse-led visits",
-                "Clear family communication",
-                "Support for recovery at home",
-                "Built for NRNs and local families",
+                "Two simple monthly care plans",
+                "Designed for NRNs and local families",
+                "Clear deliverables in every visit",
+                "Easy next step to book on WhatsApp",
               ].map((item) => (
                 <div
                   key={item}
@@ -119,10 +119,7 @@ export default function ServicesPage() {
         </Reveal>
 
         <Reveal>
-          <ServicesOverview
-            title="Service categories that feel credible, premium, and easy to present."
-            description="This page gives families, clients, and investors a focused overview of what Sanjivani can provide now and what can expand next."
-          />
+          <PricingSection />
         </Reveal>
 
         <footer className="py-16">
@@ -196,7 +193,12 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                    <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="transition hover:text-white">
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition hover:text-white"
+                    >
                       Chat on WhatsApp
                     </a>
                   </div>
